@@ -12,9 +12,10 @@ export default function ValentineApp() {
   const messages = [
     "¿Estás seguro? 🥺",
     "Por favor 💖",
+    "Pon que siiii",
     "Piénsalo de nuevo 😢",
     "Quizás te arrepientas... ",
-    "Última oportunidad 😱"
+    "Última oportunidad"
   ];
 
   const moveNoButton = () => {
