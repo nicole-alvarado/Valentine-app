@@ -19,12 +19,14 @@ export default function ValentineApp() {
   ];
 
   const moveNoButton = () => {
-    setNoPosition({
-      x: (Math.random() - 0.5) * 300,
-      y: (Math.random() - 0.5) * 300
-    });
-    setYesSize(yesSize + 0.2);
-    setMessageIndex((prev) => (prev + 1) % messages.length);
+    if (messageIndex < messages.length - 1) {
+      setNoPosition({
+        x: (Math.random() - 0.5) * 300,
+        y: (Math.random() - 0.5) * 300
+      });
+      setYesSize(yesSize + 0.2);
+      setMessageIndex((prev) => prev + 1);
+    }
   };
 
   if (accepted) {
@@ -32,12 +34,12 @@ export default function ValentineApp() {
       <div className="flex flex-col items-center justify-center h-screen bg-pink-100">
         <h1 className="text-4xl font-bold text-red-500">Sabía que aceptarías 💖</h1>
         <div className="grid grid-cols-3 gap-4 mt-6">
-          <img src="/love0.webp" alt="Cat love 1" className="w-32 h-32 rounded-lg" />
-          <img src="/love2.webp" alt="Cat love 2" className="w-32 h-32 rounded-lg" />
-          <img src="/love3.webp" alt="Cat love 3" className="w-32 h-32 rounded-lg" />
-          <img src="/love4.webp" alt="Cat love 4" className="w-32 h-32 rounded-lg" />
-          <img src="/love5.webp" alt="Cat love 5" className="w-32 h-32 rounded-lg" />
-          <img src="/love6.webp" alt="Cat love 6" className="w-32 h-32 rounded-lg" />
+          <img src="/love0.webp" alt="Cat love 1" loading="lazy" className="w-32 h-32 rounded-lg" />
+          <img src="/love2.webp" alt="Cat love 2" loading="lazy" className="w-32 h-32 rounded-lg" />
+          <img src="/love3.webp" alt="Cat love 3" loading="lazy" className="w-32 h-32 rounded-lg" />
+          <img src="/love4.webp" alt="Cat love 4" loading="lazy" className="w-32 h-32 rounded-lg" />
+          <img src="/love5.webp" alt="Cat love 5" loading="lazy" className="w-32 h-32 rounded-lg" />
+          <img src="/love6.webp" alt="Cat love 6" loading="lazy" className="w-32 h-32 rounded-lg" />
         </div>
       </div>
     );
@@ -53,13 +55,14 @@ export default function ValentineApp() {
           style={{ transform: `scale(${yesSize})` }}
           onClick={() => setAccepted(true)}
         >
-          Yes
+          Si
         </motion.button>
         <motion.button
-          className="bg-gray-400 text-white font-bold py-2 px-6 rounded-full"
+          className={`font-bold py-2 px-6 rounded-full ${messageIndex === messages.length - 1 ? "bg-gray-300 cursor-not-allowed" : "bg-gray-400 text-white"}`}
           onClick={moveNoButton}
           animate={{ x: noPosition.x, y: noPosition.y }}
           transition={{ type: "spring", stiffness: 300 }}
+          disabled={messageIndex === messages.length - 1}
         >
           No
         </motion.button>
