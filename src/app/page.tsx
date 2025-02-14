@@ -35,7 +35,7 @@ export default function ValentineApp() {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-pink-100">
         <h1 className="text-4xl font-bold text-red-500">Sabía que aceptarías 💖</h1>
-        <h1 className="text-4xl font-bold text-red-500">Nos vemos más tardecita 🤭</h1>
+        <h1 className="text-4xl font-bold text-red-500">Nos vemos más tardecita 🧉🤭</h1>
         <div className="grid grid-cols-3 gap-4 mt-6">
           <Image src="/love0.webp" alt="Cat love" width={128} height={128} className="w-32 h-32 rounded-lg" />
           <Image src="/love2.webp" alt="Cat love 2" width={128} height={128} className="w-32 h-32 rounded-lg" />
