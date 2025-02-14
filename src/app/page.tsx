@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 
 export default function ValentineApp() {
   const [yesSize, setYesSize] = useState(1);
@@ -34,12 +36,13 @@ export default function ValentineApp() {
       <div className="flex flex-col items-center justify-center h-screen bg-pink-100">
         <h1 className="text-4xl font-bold text-red-500">Sabía que aceptarías 💖</h1>
         <div className="grid grid-cols-3 gap-4 mt-6">
-          <img src="/love0.webp" alt="Cat love 1" loading="lazy" className="w-32 h-32 rounded-lg" />
-          <img src="/love2.webp" alt="Cat love 2" loading="lazy" className="w-32 h-32 rounded-lg" />
-          <img src="/love3.webp" alt="Cat love 3" loading="lazy" className="w-32 h-32 rounded-lg" />
-          <img src="/love4.webp" alt="Cat love 4" loading="lazy" className="w-32 h-32 rounded-lg" />
-          <img src="/love5.webp" alt="Cat love 5" loading="lazy" className="w-32 h-32 rounded-lg" />
-          <img src="/love6.webp" alt="Cat love 6" loading="lazy" className="w-32 h-32 rounded-lg" />
+        <Image src="/love0.webp" alt="Cat love" width={128} height={128} className="w-32 h-32 rounded-lg" />
+
+        <Image src="/love2.webp" alt="Cat love 2" width={128} height={128} className="w-32 h-32 rounded-lg" />
+        <Image src="/love3.webp" alt="Cat love 3" width={128} height={128} className="w-32 h-32 rounded-lg" />
+        <Image src="/love4.webp" alt="Cat love 4" width={128} height={128} className="w-32 h-32 rounded-lg" />
+        <Image src="/love5.webp" alt="Cat love 5" width={128} height={128} className="w-32 h-32 rounded-lg" />
+        <Image src="/love6.webp" alt="Cat love 6" width={128} height={128} className="w-32 h-32 rounded-lg" />
         </div>
       </div>
     );
